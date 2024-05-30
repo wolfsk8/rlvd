@@ -16,23 +16,29 @@ import java.util.List;
 
 public class Consultas_listado {
     
-    public static List<obj_cargo> listarCargos() {
-        List<obj_cargo> cargos = new ArrayList<>();
+    public static List<obj_cargo> listarCargos(int condicion,int id_cargo, String cargo, String descripcion, long fecha_aud) {
+        List<obj_cargo> list_cargo = new ArrayList<>();
         try (Connection conn = DatabaseConexion.getConnection();
-             CallableStatement stmt = conn.prepareCall("{ CALL F_LISTA_CARGO(0, null, null, null, null) }")) {
+             CallableStatement stmt = conn.prepareCall("{ CALL F_LISTA_CARGO(?, ?, ?, ?, ?) }")) {
+            // Establece los valores de los parámetros de entrada
+                stmt.setInt(1, condicion);
+                stmt.setInt(2, id_cargo);
+                stmt.setString(3, cargo);
+                stmt.setString(4, descripcion);
+                stmt.setLong(5, fecha_aud);
 
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                obj_cargo cargo = new obj_cargo();
-                cargo.setId_cargo(rs.getInt("id_cargo"));
-                cargo.setCargo(rs.getString("cargo"));
-                cargo.setDescripcion(rs.getString("descripcion"));
-                cargos.add(cargo);
+                obj_cargo obj_consulta = new obj_cargo();
+                obj_consulta.setId_cargo(rs.getInt("ID_CARGO"));
+                obj_consulta.setCargo(rs.getString("CARGO"));
+                obj_consulta.setDescripcion(rs.getString("DESCRIPCION"));
+                list_cargo.add(obj_consulta);
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return cargos;
+        return list_cargo;
     }
 }

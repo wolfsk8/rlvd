@@ -5,10 +5,14 @@
 package database;
 
 
+import Consultas.Consultas_listado;
+import Objetos.obj_cargo;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DataBaseTest {
     public static void main(String[] args) {
@@ -22,9 +26,15 @@ public class DataBaseTest {
                 System.out.println("Valor de la columna 2: " + resultSet.getString(2));
                 // Agrega más líneas para obtener los valores de otras columnas según tu necesidad
             }
-
+        
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        List<obj_cargo> list_cargo = new ArrayList<>();
+            list_cargo = Consultas_listado.listarCargos(0, 0, " ", " ", 0);
+            System.out.println("Usando un bucle foreach:");
+        for (obj_cargo cargo : list_cargo) {
+        System.out.println(cargo.getCargo()+", "+cargo.getDescripcion());
+}
     }
 }
