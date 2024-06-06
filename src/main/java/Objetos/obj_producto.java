@@ -4,66 +4,33 @@
  */
 package Objetos;
 
+import java.util.ArrayList;
+import java.util.List;
+/**importar lombok**/
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  *
  * @author juancazana
  */
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class obj_producto {
     int id_producto;
     String descripcion_producto;
     int stock;
     float precio;
     long aud_estado;
-
-    public obj_producto(int id_producto, String descripcion_producto, int stock, float precio, long aud_estado) {
-        this.id_producto = id_producto;
-        this.descripcion_producto = descripcion_producto;
-        this.stock = stock;
-        this.precio = precio;
-        this.aud_estado = aud_estado;
+      
+    public List<obj_producto> listarProductos(int id_producto) {
+        // Lógica para obtener la lista de productos desde tu fuente de datos
+        List<obj_producto> listaProductos = new ArrayList<>();
+        return listaProductos;
     }
-
-    public obj_producto() {
-    }
-
-    public int getId_producto() {
-        return id_producto;
-    }
-
-    public void setId_producto(int id_producto) {
-        this.id_producto = id_producto;
-    }
-
-    public String getDescripcion_producto() {
-        return descripcion_producto;
-    }
-
-    public void setDescripcion_producto(String descripcion_producto) {
-        this.descripcion_producto = descripcion_producto;
-    }
-
-    public int getStock() {
-        return stock;
-    }
-
-    public void setStock(int stock) {
-        this.stock = stock;
-    }
-
-    public float getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(float precio) {
-        this.precio = precio;
-    }
-
-    public long getAud_estado() {
-        return aud_estado;
-    }
-
-    public void setAud_estado(long aud_estado) {
-        this.aud_estado = aud_estado;
-    }
-    
 }
+

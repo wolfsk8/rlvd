@@ -5,50 +5,45 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" href="#">
     </head>
     <body>
     <header>
         <h1>Radio la voz del atalaya</h1>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Productos</a></li>
-            <li><a href="#">Clientes</a></li>
-            <li><a href="#">Caja</a></li>
-            <li><a href="#">Reportes</a></li>
-            <li><a href="#">Usuarios</a></li>
-            <li><a href="#">Ajustes</a></li>
+    <div>
+        <nav>
+            <ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-target="inicio.html">INICIO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-target="modulo_productos.html">PRODUCTO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-target="modulo_ventas.html">VENTAS</a>
+                </li><li class="nav-item">
+                    <a class="nav-link" href="#" data-target="modulo_compras.html">COMPRAS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-target="modulo_productos.html">REPORTES</a>
+                </li>
+                <li><a href="#">Usuarios</a></li>
+                <li><a href="#">Ajustes</a></li>
             
-        </ul>
-    </nav>
-    <main>
-        <section>
-            <h2>Bienvenido. Elija una opción</h2>
-            <div class="option">
-                <a href="#">
-                    <img src="img/icon_shop.png" alt="Realizar una venta">
-                    <p>Realizar una venta</p>
-                </a>
-            </div>
-            <div class="option">
-                <a href="#">
-                    <img src="img/icon_inventario.png" alt="Ver inventario">
-                    <p>Ver inventario</p>
-                </a>
-            </div>
-            <div class="option">
-                <a href="#">
-                    <img src="img/icon_persona.png" alt="Mis clientes">
-                    <p>Mis clientes</p>
-                </a>
-            </div><!-- Añade más opciones según sea necesario -->
-            
-        </section>
-    </main>
-    <footer>
-        <p>Sublime POS - Punto de venta gratuito por Parzibyte</p>
-    </footer>
-    <script src="js/script.js"></script>
+            </ul>
+        </nav>
+        <div id="content">
+            <div class="container mt-4"></div>
+        </div>
+        
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src=""></script>
 </body>
 </html>

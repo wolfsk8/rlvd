@@ -13,9 +13,6 @@ public class obj_audiovisual extends obj_producto {
     String formato;
     long aud_audiovisual;
 
-    public obj_audiovisual() {
-    }
-
     public obj_audiovisual(int id_audiovisual, String formato, long aud_audiovisual, int id_producto, String descripcion_producto, int stock, float precio, long aud_estado) {
         super(id_producto, descripcion_producto, stock, precio, aud_estado);
         this.id_audiovisual = id_audiovisual;

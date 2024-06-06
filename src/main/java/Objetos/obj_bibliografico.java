@@ -15,8 +15,6 @@ public class obj_bibliografico extends obj_producto{
     String autor;
     long aud_bibliografico;
 
-    public obj_bibliografico() {
-    }
 
     public obj_bibliografico(int id_bibliografico, String titulo, String editorial, String autor, long aud_bibliografico, int id_producto, String descripcion_producto, int stock, float precio, long aud_estado) {
         super(id_producto, descripcion_producto, stock, precio, aud_estado);
